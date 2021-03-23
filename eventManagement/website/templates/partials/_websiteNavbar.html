@@ -1,0 +1,100 @@
+{% load static %}
+<header id="header-section" class="header-section default-header-section auto-hide-header clearfix">
+
+    <!-- header-top - start -->
+    <div class="header-top">
+        <div class="container">
+            <div class="row">
+
+                <!-- basic-contact - start -->
+                <div class="col-lg-6">
+                    <div class="basic-contact">
+                        <ul>
+                            <li>
+                                <a href="#!">
+                                    <i class="fas fa-envelope"></i>
+                                    info@Gowjee.com
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!">
+                                    <i class="fas fa-phone"></i>
+                                    100-2222-9999
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- basic-contact - end -->
+
+                <!-- register-login-group - start -->
+            
+                <!-- register-login-group - end -->
+                
+            </div>
+        </div>
+    </div>
+    <!-- header-top - end -->
+
+    <!-- header-bottom - start -->
+    <div class="header-bottom">
+        <div class="container">
+            <div class="row">
+
+                <!-- site-logo-wrapper - start -->
+                <div class="col-lg-3">
+                    <div class="site-logo-wrapper">
+                        <a href="{% url 'index' %}" class="logo">
+                            <img src="{% static 'assets/images/1.site-logo.png' %}" alt="logo_not_found">
+                        </a>
+                    </div>
+                </div>
+                <!-- site-logo-wrapper - end -->
+
+                <!-- mainmenu-wrapper - start -->
+                <div class="col-lg-9">
+                    <div class="mainmenu-wrapper">
+                        <div class="row">
+
+                            <!-- menu-item-list - start -->
+                            <div class="col-lg-12">
+                                <div class="menu-item-list ul-li clearfix">
+                                    <ul>
+                                        <li class="menu-item-has-children">
+                                            <a href="{% url 'index' %}">Home</a></li>
+                                        <li class="menu-item-has-children {% if request.path == '/about' %} active {% endif %}">
+                                            <a href="{% url 'about' %}">about Us</a>
+                                        </li>
+                                        <li class="menu-item-has-children {% if request.path == '/service' %} active {% endif %}">
+                                            <a href="#">Services</a>
+                                            <ul class="sub-menu">
+                                                {% for service in services %}
+                                                
+                                                <li class="menu-item-has-children">
+                                                    <a href="{% url 'service' id=service.id %}">{{ service.title }}</a>
+                                                </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item-has-children {% if request.path == '/gallery' %} active {% endif %}">
+                                            <a href="{% url 'gallery' %}">gallery</a>
+                                        </li>
+                                        <li class="menu-item-has-children {% if request.path == '/contact' %} active {% endif %}">
+                                            <a href="{% url 'contact' %}">Contact Us</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- menu-item-list - end -->
+
+                        </div>
+                    </div>
+                </div>
+                <!-- mainmenu-wrapper - end -->
+
+            </div>
+        </div>
+    </div>
+    <!-- header-bottom - end -->
+
+</header>

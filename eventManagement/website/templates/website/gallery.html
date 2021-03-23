@@ -1,0 +1,374 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	{% include 'partials/_homeHead.html' %}
+
+
+
+	<body class="default-header-p">
+
+
+
+
+		
+		<!-- backtotop - start -->
+		<div id="thetop" class="thetop"></div>
+		<div class='backtotop'>
+			<a href="#thetop" class='scroll'>
+				<i class="fas fa-angle-double-up"></i>
+			</a>
+		</div>
+		<!-- backtotop - end -->
+
+		<!-- preloader - start -->
+		<div id="preloader"></div>
+		<!-- preloader - end -->
+
+
+
+
+		<!-- header-section - start
+		================================================== -->
+		{% include 'partials/_websiteNavbar.html' %}
+		<!-- header-section - end
+		================================================== -->
+
+
+
+
+
+		<!-- altranative-header - start
+		================================================== -->
+		<div class="header-altranative">
+			<div class="container">
+				<div class="logo-area float-left">
+					<a href="{% url 'index' %}">
+						<img src="{% static 'assets/images/1.site-logo.png'  %}"alt="logo_not_found">
+					</a>
+				</div>
+
+				<button type="button" id="sidebarCollapse" class="alt-menu-btn float-right">
+					<i class="fas fa-bars"></i>
+				</button>
+			</div>
+
+			<!-- sidebar menu - start -->
+			<div class="sidebar-menu-wrapper">
+				<div id="sidebar" class="sidebar">
+					<span id="sidebar-dismiss" class="sidebar-dismiss">
+						<i class="fas fa-arrow-left"></i>
+					</span>
+
+					<div class="sidebar-header">
+						<a href="#!">
+							<img src="{% static 'assets/images/2.site-logo.png'  %}"alt="logo_not_found">
+						</a>
+					</div>
+
+					<!-- main-pages-links - start -->
+					<div class="menu-link-list main-pages-links">
+						<ul>
+							<li class="active">
+								<a href="{% url 'index' %}">
+									<span class="icon"><i class="fas fa-home"></i></span>
+									Home</a>
+							</li>
+							<li>
+								<a href="{% url 'about' %}">
+									<span class="icon"><i class="fas fa-home"></i></span>
+									about Us
+								</a>
+							</li>
+							<li>
+								<a href="{% url 'gallery' %}">
+									<span class="icon"><i class="fas fa-home"></i></span>
+									gallery
+								</a>
+							</li>
+							<li>
+								<a href="{% url 'contact' %}">
+									<span class="icon"><i class="fas fa-home"></i></span>
+									Contact Us
+								</a>
+							</li>
+						</ul>
+					</div>
+					<!-- main-pages-links - end -->
+
+					<!-- login-btn-group - start -->
+					<div class="login-btn-group">
+						<ul>
+
+							<li>
+								<a href="#alt-register-modal" class="register-modal-btn">
+									Register
+								</a>
+								<div id="alt-register-modal" class="reglog-modal-wrapper register-modal mfp-hide clearfix" style="background-image: url({% static 'assets/images/login-modal-bg.jpg' %});">
+									<div class="overlay-black clearfix">
+										<!-- rightside-content - start -->
+										<div class="rightside-content text-center">
+
+											<div class="mb-30">
+												<h2 class="form-title title-large white-color">Account <strong>Register</strong></h2>
+												<span class="form-subtitle white-color">Have an account? <strong>LOGIN NOW</strong></span>
+											</div>
+
+											<div class="login-form text-center mb-50">
+												<form action="#!">
+													<div class="form-item">
+														<input type="email" placeholder="User Name">
+													</div>
+													<div class="form-item">
+														<input type="password" placeholder="Password">
+													</div>
+													<div class="form-item">
+														<input type="email" placeholder="Repeat Password">
+													</div>
+													<div class="form-item">
+														<input type="password" placeholder="Email Address">
+													</div>
+													<div class="human-verification text-left">
+														<input type="checkbox" id="alt-imnotarobot">
+														<label for="alt-imnotarobot">I'm not a robot</label>
+														<span class="verification-image">
+															<img src="{% static 'assets/images/iamnotrobot.png'  %}"alt="Image_not_found">
+														</span>
+													</div>
+													<button type="submit" class="login-btn">login now</button>
+												</form>
+											</div>
+
+											<div class="bottom-text white-color">
+												<p class="m-0">
+													* Denotes mandatory field.
+												</p>
+												<p class="m-0">** At least one telephone number is required.</p>
+											</div>
+
+										</div>
+										<!-- rightside-content - end -->
+
+										<a class="popup-modal-dismiss" href="#!">
+											<i class="fas fa-times"></i>
+										</a>
+
+									</div>
+								</div>
+							</li>
+							<li>
+								<a href="#alt-login-modal" class="login-modal-btn">
+									Login
+								</a>
+								<div id="alt-login-modal" class="reglog-modal-wrapper mfp-hide clearfix" style="background-image: url({% static 'assets/images/login-modal-bg.jpg' %});">
+									<div class="overlay-black clearfix">
+										<!-- rightside-content - start -->
+										<div class="rightside-content text-center">
+
+											<div class="mb-30">
+												<h2 class="form-title title-large white-color">Account <strong>Login</strong></h2>
+												<span class="form-subtitle white-color">Login to our website, or <strong>REGISTER</strong></span>
+											</div>
+
+											<div class="fb-login-btn mb-30">
+												<a href="#!">
+													<span class="icon">
+														<i class="fab fa-facebook-f"></i>
+													</span>
+													login with facebook
+												</a>
+											</div>
+
+											<div class="or-text mb-30">
+												<span>or sign in</span>
+											</div>
+
+											<div class="login-form text-center mb-50">
+												<form action="#!">
+													<div class="form-item">
+														<input type="email" placeholder="example@gmail.com">
+													</div>
+													<div class="form-item">
+														<input type="password" placeholder="Password">
+													</div>
+													<button type="submit" class="login-btn">login now</button>
+												</form>
+											</div>
+
+											<div class="bottom-text white-color">
+												<p class="m-0">
+													* Denotes mandatory field.
+												</p>
+												<p class="m-0">** At least one telephone number is required.</p>
+											</div>
+
+										</div>
+										<!-- rightside-content - end -->
+
+										<a class="popup-modal-dismiss" href="#!">
+											<i class="fas fa-times"></i>
+										</a>
+
+									</div>
+								</div>
+							</li>
+							
+						</ul>
+					</div>
+					<!-- login-btn-group - end -->
+
+					<div class="overlay"></div>
+				</div>
+			</div>
+			<!-- sidebar menu - end -->
+		</div>
+		<!-- altranative-header - end
+		================================================== -->
+
+
+
+
+
+		<!-- breadcrumb-section - start
+		================================================== -->
+		<section id="breadcrumb-section" class="breadcrumb-section clearfix">
+			<div class="jarallax" style="background-image: url({% static 'assets/images/breadcrumb/0.breadcrumb-bg.jpg' %});">
+				<div class="overlay-black">
+					<div class="container">
+						<div class="row justify-content-center">
+							<div class="col-lg-6 col-md-12 col-sm-12">
+
+								<!-- breadcrumb-title - start -->
+								<div class="breadcrumb-title text-center mb-50">
+									<span class="sub-title">event gallery</span>
+									<h2 class="big-title">Event Management <strong>gallery</strong></h2>
+								</div>
+								<!-- breadcrumb-title - end -->
+
+								<!-- breadcrumb-list - start -->
+								<div class="breadcrumb-list">
+									<ul>
+										<li class="breadcrumb-item"><a href="{% url 'index' %}" class="breadcrumb-link">Home</a></li>
+										<li class="breadcrumb-item active" aria-current="page">Gowjee gallery</li>
+									</ul>
+								</div>
+								<!-- breadcrumb-list - end -->
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- breadcrumb-section - end
+		================================================== -->
+
+
+
+
+
+		<!-- event-gallery-section - start
+		================================================== -->
+		<section id="event-gallery-section" class="event-gallery-section sec-ptb-100 clearfix">
+			<div class="container">
+
+				<div class="button-group filters-button-group mb-30">
+					<button class="button is-checked" data-filter="*">
+						<i class="fas fa-star"></i>
+						<strong>all</strong> gallery
+					</button>
+					<button class="button" data-filter=".video-gallery">
+						<i class="fas fa-play-circle"></i>
+						<strong>video</strong> gallery
+					</button>
+					<button class="button" data-filter=".photo-gallery">
+						<i class="far fa-image"></i>
+						<strong>photo</strong> gallery
+					</button>
+				</div>
+
+				<div class="grid zoom-gallery clearfix mb-80" data-isotope="{ &quot;masonry&quot;: { &quot;columnWidth&quot;: 0 } }">
+				{% for galleryItem in galleryItems%}
+				{% if galleryItem.isVideo %}
+				<div class="grid-item grid-item--width2 video-gallery " data-category="video-gallery">
+					<a class="popup-youtube" href="{{galleryItem.videoLink}}">
+						<img src="{{galleryItem.image.url}}" alt="Image_not_found">
+					</a>
+					<div class="item-content">
+						<h3>{% if galleryItem.title %}{{galleryItem.title}}{% endif %}</h3>
+						<span>{% if galleryItem.description %}{{galleryItem.description}}{% endif %}</span>
+					</div>
+				</div>
+				{% else %}
+				<div class="grid-item grid-item--height2 photo-gallery " data-category="photo-gallery">
+					<a class="popup-link" href="{{galleryItem.image.url}}" >
+						<img src="{{galleryItem.image.url}}"alt="Image_not_found">
+					</a>
+					<div class="item-content">
+						<h3>{% if galleryItem.title %}{{galleryItem.title}}{% endif %}</h3>
+						<span>{% if galleryItem.description %}{{galleryItem.description}}{% endif %}</span>
+					</div>
+				</div>
+				{% endif %}
+				{% endfor %}
+				
+				
+				
+			</div>
+			</div>
+		</section>
+		<!-- event-gallery-section - end
+		================================================== -->
+
+
+
+
+
+		<!-- special-offer-section - start
+		================================================== -->
+		<section id="special-offer-section" class="special-offer-section clearfix" style="background-image: url({% static 'assets/images/special-offer-bg.png' %});">
+			<div class="container">
+				<div class="row">
+
+					<!-- special-offer-content - start -->
+					<div class="col-lg-9 col-md-12 col-sm-12">
+						<div class="special-offer-content">
+							<h2><strong>30%</strong> Off in June~July for <span>Birthday Events</span></h2>
+							<p class="m-0">
+								Contact us now and we will make your event unique & unforgettable
+							</p>
+						</div>
+					</div>
+					<!-- special-offer-content - end -->
+
+					<!-- event-makeing-btn - start -->
+					<div class="col-lg-3 col-md-12 col-sm-12">
+						<div class="event-makeing-btn">
+							<a href="#!">make an event now</a>
+						</div>
+					</div>
+					<!-- event-makeing-btn - end -->
+
+				</div>
+			</div>
+		</section>
+		<!-- special-offer-section - end
+		================================================== -->
+
+
+
+
+
+
+
+
+
+
+
+
+		{% include 'partials/_footer.html' %}
+		{% include 'partials/_homeScripts.html' %}
+
+
+
+	</body>
+	</html>

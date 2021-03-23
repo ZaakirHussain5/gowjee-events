@@ -1,0 +1,910 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+{% include 'partials/_homeHead.html' %}
+	<body>		
+		<!-- backtotop - start -->
+		<div id="thetop" class="thetop"></div>
+		<div class='backtotop'>
+			<a href="#thetop" class='scroll'>
+				<i class="fas fa-angle-double-up"></i>
+			</a>
+		</div>
+		<!-- backtotop - end -->
+
+		<!-- preloader - start -->
+		<div id="preloader"></div>
+		<!-- preloader - end -->
+
+		<!-- header-section - start
+		================================================== -->
+		<header id="header-section" class="header-section sticky-header-section not-stuck clearfix">
+			<!-- header-bottom - start -->
+			<div class="header-bottom">
+				<div class="container">
+					<div class="row">
+
+						<!-- site-logo-wrapper - start -->
+						<div class="col-lg-3">
+							<div class="site-logo-wrapper">
+								<a href="{% url 'index' %}" class="logo">
+									<img src="{% static 'assets/images/1.site-logo.png' %}" alt="logo_not_found">
+								</a>
+							</div>
+						</div>
+						<!-- site-logo-wrapper - end -->
+
+						<!-- mainmenu-wrapper - start -->
+						<div class="col-lg-9">
+							<div class="mainmenu-wrapper">
+								<div class="row">
+
+									<!-- menu-item-list - start -->
+									<div class="col-lg-12">
+										<div class="menu-item-list ul-li clearfix">
+											<ul>
+												<li class="menu-item-has-children active">
+													<a href="{% url 'index' %}">Home</a></li>
+												<li class="menu-item-has-children">
+													<a href="{% url 'about' %}">about Us</a>
+												</li>
+												<li class="menu-item-has-children">
+													<a href="#!">Services</a>
+													<ul class="sub-menu">
+														{% for service in services %}
+														<li class="menu-item-has-children">
+															<a href="{% url 'service' id=service.id %}">{{service.title}}</a>
+														</li>
+														{% endfor %}
+													</ul>
+												</li>
+												<li class="menu-item-has-children">
+													<a href="{% url 'gallery' %}">gallery</a>
+												</li>
+												<li class="menu-item-has-children">
+													<a href="{% url 'contact' %}">Contact Us</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="header-altranative">
+			<div class="container">
+				<div class="logo-area float-left">
+					<a href="{% url 'index' %}">
+						<img src="{% static 'assets/images/1.site-logo.png' %}" alt="logo_not_found">
+					</a>
+				</div>
+
+				<button type="button" id="sidebarCollapse" class="alt-menu-btn float-right">
+					<i class="fas fa-bars"></i>
+				</button>
+			</div>
+
+			<!-- sidebar menu - start -->
+			<div class="sidebar-menu-wrapper">
+				<div id="sidebar" class="sidebar">
+					<span id="sidebar-dismiss" class="sidebar-dismiss">
+						<i class="fas fa-arrow-left"></i>
+					</span>
+
+					<div class="sidebar-header">
+						<a href="#!">
+							<img src="{% static 'assets/images/2.site-logo.png' %}" alt="logo_not_found">
+						</a>
+					</div>
+
+					<!-- main-pages-links - start -->
+					<div class="menu-link-list main-pages-links">
+						<ul>
+							<li class="active">
+								<a href="{% url 'index' %}">
+									<span class="icon"><i class="fas fa-home"></i></span>
+									Home</a>
+							</li>
+							<li>
+								<a href="{% url 'about' %}">
+									<span class="icon"><i class="fas fa-home"></i></span>
+									about Us
+								</a>
+							</li>
+							<li class="menu-item-has-children">
+								<a href="#!">Services</a>
+								<ul class="sub-menu">
+									{% for service in services %}
+									<li class="menu-item-has-children">
+										<a href="{% url 'service' id=service.id %}">{{service.title}}</a>
+									</li>
+									{% endfor %}
+								</ul>
+							</li>
+							<li>
+								<a href="gallery' %}">
+									<span class="icon"><i class="fas fa-home"></i></span>
+									gallery
+								</a>
+							</li>
+							<li>
+								<a href=""{% url 'contact' %}"">
+									<span class="icon"><i class="fas fa-home"></i></span>
+									Contact Us
+								</a>
+							</li>
+						</ul>
+					</div>
+
+					<div class="overlay"></div>
+				</div>
+			</div>
+		</div>
+		<section id="slide-section" class="slide-section clearfix">
+			<div id="main-carousel1" class="main-carousel1 owl-carousel owl-theme">
+
+				<div class="item" style="background-image: url({% static 'assets/images/slider/slider-bg1.jpg' %});">
+					<div class="overlay-black">
+						<div class="container">
+							<div class="slider-item-content">
+
+								<span class="medium-text">one stop</span>
+								<h1 class="big-text">Event Planner</h1>
+								<small class="small-text">every event sould be perfect</small>
+
+								<div class="link-groups">
+									<a href="{% url 'about' %}" class="about-btn custom-btn">about us</a>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="item" style="background-image: url({% static 'assets/images/slider/slider-bg2.jpg' %});">
+					<div class="overlay-black">
+						<div class="container">
+							<div class="slider-item-content">
+
+								<span class="medium-text">one stop</span>
+								<h1 class="big-text">Event Planner</h1>
+								<small class="small-text">every event sould be perfect</small>
+
+								<div class="link-groups">
+									<a href="{% url 'about' %}" class="{% url 'about-btn custom-btn">about us</a>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="item" style="background-image: url({% static 'assets/images/slider/slider-bg3.jpg' %});">
+					<div class="overlay-black">
+						<div class="container">
+							<div class="slider-item-content">
+
+								<span class="medium-text">one stop</span>
+								<h1 class="big-text">Event Planner</h1>
+								<small class="small-text">every event sould be perfect</small>
+
+								<div class="link-groups">
+									<a href="{% url 'about' %}" class="{% url 'about-btn custom-btn">about us</a>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</section>
+
+		<section id="speaker-section" class="speaker-section clearfix">
+			<div class="jarallax" style="background-image: url({% static 'assets/images/speaker/Black-White-Dubai-Wallpaper.jpg' %});">
+				<div style="background-color: #333333;">
+					<div class="container">
+
+						<!-- speaker-carousel - start -->
+						<div class="speaker-carousel">
+							<div class="slider-for">
+
+								<div class="item">
+									<div class="row">
+
+										<!-- speaker-image - start -->
+										<div class="col-lg-6 col-md-12 col-sm-12">
+											<div class="speaker-image image-wrapper text-center mt-5">
+												<img src="{% static 'assets/images/about/about.jpeg' %}" alt="Image_not_found" style="height: 370px;">
+												<span class="speaker-name"><strong></strong></span> 
+											</div>
+										</div>
+										<!-- speaker-image - end -->
+
+										<!-- speaker-content - start -->
+										<div class="col-lg-6 col-md-12 col-sm-12">
+											<div class="speaker-content">
+
+												<!-- section-title - start -->
+												<div class="section-title text-left mb-50">
+													<span class="line-style"></span>
+													<small class="sub-title"></small>
+													<h2 class="big-title" style="color: #fff;">Event <strong>Management</strong></h2>
+												</div>
+												<!-- section-title - end -->
+
+												<div class="speaker-info">
+													<p class="black-color mb-30" style="font-weight: bold;color: #fff;">
+														Event management is the application of project management to the creation and development of small and/or large-scale personal or corporate events such as festivals, conferences, ceremonies, weddings, formal parties, concerts, or conventions. It involves studying the brand, identifying its target audience, devising the event concept, and coordinating the technical aspects before actually launching the event.
+													</p>
+												</div>
+
+											</div>
+										</div>
+										<!-- speaker-content - end -->
+
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<!-- speaker-carousel - end -->
+
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+
+		<!-- event-section - start
+		================================================== -->
+		<section id="event-section" class="event-section sec-ptb-100 bg-gray-light clearfix">
+			<div class="container">
+
+				<div class="mb-50">
+					<div class="row">
+
+						<!-- section-title - start -->
+						<div class="col-lg-3 col-md-12 col-sm-12">
+							<div class="section-title text-left">
+								<span class="line-style"></span>
+								<small class="sub-title">Our</small>
+								<h2 class="big-title"><strong>Services</strong></h2>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+				<!-- tab-content - start -->
+				<div class="tab-content">
+					<div id="musical-event" class="tab-pane fade in active show">
+						<div class="row">
+							{% for service in services %}
+							<div class="col-lg-6 col-md-12 col-sm-12">
+								<div class="event-item clearfix">
+
+									<!-- event-image - start -->
+									<div class="event-image">
+										<img src="{{service.image.url}}" alt="Image_not_found">
+									</div>
+									<!-- event-image - end -->
+
+									<!-- event-content - start -->
+									<div class="event-content">
+										<div class="event-title mb-15">
+											<h3 class="title">
+												{{service.title}}
+											</h3>
+										</div>
+										<div class="event-post-meta ul-li-block mb-30">
+											<p style="color:black;height: 124px;overflow: hidden;">{{service.description}}</p>
+										</div>
+										<a href="{% url 'service' id=service.id %}" class="tickets-details-btn">
+											Read More
+										</a>
+									</div>
+									<!-- event-content - end -->
+
+								</div>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+					<!-- musical-event - end -->
+
+					<!-- other-event - start -->
+					<div id="other-event" class="tab-pane fade">
+						<div class="row">
+
+							<!-- event-item - start -->
+							<div class="col-lg-6 col-md-12 col-sm-12">
+								<div class="event-item clearfix">
+
+									<!-- event-image - start -->
+									<div class="event-image">
+										<div class="post-date">
+											<span class="date">26</span>
+											<small class="month">june</small>
+										</div>
+										<img src="{% static 'assets/images/event/event-1.jpg' %}" alt="Image_not_found">
+									</div>
+									<!-- event-image - end -->
+
+									<!-- event-content - start -->
+									<div class="event-content">
+										<div class="event-title mb-15">
+											<h3 class="title">
+												Barcelona Food truck Festival 2018
+											</h3>
+											<span class="ticket-price yellow-color">Tickets from $52</span>
+										</div>
+										<div class="event-post-meta ul-li-block mb-30">
+											<ul>
+												<li>
+													<span class="icon">
+														<i class="far fa-clock"></i>
+													</span>
+													Start 20:00pm - 22:00pm
+												</li>
+												<li>
+													<span class="icon">
+														<i class="fas fa-map-marker-alt"></i>
+													</span>
+													Manhattan, New York
+												</li>
+											</ul>
+										</div>
+										<a href="#!" class="tickets-details-btn">
+											tickets & details
+										</a>
+									</div>
+									<!-- event-content - end -->
+
+								</div>
+							</div>
+							<!-- event-item - end -->
+
+							<!-- event-item - start -->
+							<div class="col-lg-6 col-md-12 col-sm-12">
+								<div class="event-item clearfix">
+
+									<!-- event-image - start -->
+									<div class="event-image">
+										<div class="post-date">
+											<span class="date">26</span>
+											<small class="month">june</small>
+										</div>
+										<img src="{% static 'assets/images/event/event-2.jpg' %}" alt="Image_not_found">
+									</div>
+									<!-- event-image - end -->
+
+									<!-- event-content - start -->
+									<div class="event-content">
+										<div class="event-title mb-15">
+											<h3 class="title">
+												Barcelona Food truck Festival 2018
+											</h3>
+											<span class="ticket-price yellow-color">Tickets from $52</span>
+										</div>
+										<div class="event-post-meta ul-li-block mb-30">
+											<ul>
+												<li>
+													<span class="icon">
+														<i class="far fa-clock"></i>
+													</span>
+													Start 20:00pm - 22:00pm
+												</li>
+												<li>
+													<span class="icon">
+														<i class="fas fa-map-marker-alt"></i>
+													</span>
+													Manhattan, New York
+												</li>
+											</ul>
+										</div>
+										<a href="#!" class="tickets-details-btn">
+											tickets & details
+										</a>
+									</div>
+									<!-- event-content - end -->
+
+								</div>
+							</div>
+							<!-- event-item - end -->
+
+							<!-- event-item - start -->
+							<div class="col-lg-6 col-md-12 col-sm-12">
+								<div class="event-item clearfix">
+
+									<!-- event-image - start -->
+									<div class="event-image">
+										<div class="post-date">
+											<span class="date">26</span>
+											<small class="month">june</small>
+										</div>
+										<img src="{% static 'assets/images/event/event-3.jpg' %}" alt="Image_not_found">
+									</div>
+									<!-- event-image - end -->
+
+									<!-- event-content - start -->
+									<div class="event-content">
+										<div class="event-title mb-15">
+											<h3 class="title">
+												Barcelona Food truck Festival 2018
+											</h3>
+											<span class="ticket-price yellow-color">Tickets from $52</span>
+										</div>
+										<div class="event-post-meta ul-li-block mb-30">
+											<ul>
+												<li>
+													<span class="icon">
+														<i class="far fa-clock"></i>
+													</span>
+													Start 20:00pm - 22:00pm
+												</li>
+												<li>
+													<span class="icon">
+														<i class="fas fa-map-marker-alt"></i>
+													</span>
+													Manhattan, New York
+												</li>
+											</ul>
+										</div>
+										<a href="#!" class="tickets-details-btn">
+											tickets & details
+										</a>
+									</div>
+									<!-- event-content - end -->
+
+								</div>
+							</div>
+							<!-- event-item - end -->
+
+							<!-- event-item - start -->
+							<div class="col-lg-6 col-md-12 col-sm-12">
+								<div class="event-item clearfix">
+
+									<!-- event-image - start -->
+									<div class="event-image">
+										<div class="post-date">
+											<span class="date">26</span>
+											<small class="month">june</small>
+										</div>
+										<img src="{% static 'assets/images/event/event-4.jpg' %}" alt="Image_not_found">
+									</div>
+									<!-- event-image - end -->
+
+									<!-- event-content - start -->
+									<div class="event-content">
+										<div class="event-title mb-15">
+											<h3 class="title">
+												Barcelona Food truck Festival 2018
+											</h3>
+											<span class="ticket-price yellow-color">Tickets from $52</span>
+										</div>
+										<div class="event-post-meta ul-li-block mb-30">
+											<ul>
+												<li>
+													<span class="icon">
+														<i class="far fa-clock"></i>
+													</span>
+													Start 20:00pm - 22:00pm
+												</li>
+												<li>
+													<span class="icon">
+														<i class="fas fa-map-marker-alt"></i>
+													</span>
+													Manhattan, New York
+												</li>
+											</ul>
+										</div>
+										<a href="#!" class="tickets-details-btn">
+											tickets & details
+										</a>
+									</div>
+									<!-- event-content - end -->
+
+								</div>
+							</div>
+							<!-- event-item - end -->
+
+							<!-- event-item - start -->
+							<div class="col-lg-6 col-md-12 col-sm-12">
+								<div class="event-item clearfix">
+
+									<!-- event-image - start -->
+									<div class="event-image">
+										<div class="post-date">
+											<span class="date">26</span>
+											<small class="month">june</small>
+										</div>
+										<img src="{% static 'assets/images/event/event-5.jpg' %}" alt="Image_not_found">
+									</div>
+									<!-- event-image - end -->
+
+									<!-- event-content - start -->
+									<div class="event-content">
+										<div class="event-title mb-15">
+											<h3 class="title">
+												Barcelona Food truck Festival 2018
+											</h3>
+											<span class="ticket-price yellow-color">Tickets from $52</span>
+										</div>
+										<div class="event-post-meta ul-li-block mb-30">
+											<ul>
+												<li>
+													<span class="icon">
+														<i class="far fa-clock"></i>
+													</span>
+													Start 20:00pm - 22:00pm
+												</li>
+												<li>
+													<span class="icon">
+														<i class="fas fa-map-marker-alt"></i>
+													</span>
+													Manhattan, New York
+												</li>
+											</ul>
+										</div>
+										<a href="#!" class="tickets-details-btn">
+											tickets & details
+										</a>
+									</div>
+									<!-- event-content - end -->
+
+								</div>
+							</div>
+							<!-- event-item - end -->
+
+							<!-- event-item - start -->
+							<div class="col-lg-6 col-md-12 col-sm-12">
+								<div class="event-item clearfix">
+
+									<!-- event-image - start -->
+									<div class="event-image">
+										<div class="post-date">
+											<span class="date">26</span>
+											<small class="month">june</small>
+										</div>
+										<img src="{% static 'assets/images/event/event-6.jpg' %}" alt="Image_not_found">
+									</div>
+									<!-- event-image - end -->
+
+									<!-- event-content - start -->
+									<div class="event-content">
+										<div class="event-title mb-15">
+											<h3 class="title">
+												Barcelona Food truck Festival 2018
+											</h3>
+											<span class="ticket-price yellow-color">Tickets from $52</span>
+										</div>
+										<div class="event-post-meta ul-li-block mb-30">
+											<ul>
+												<li>
+													<span class="icon">
+														<i class="far fa-clock"></i>
+													</span>
+													Start 20:00pm - 22:00pm
+												</li>
+												<li>
+													<span class="icon">
+														<i class="fas fa-map-marker-alt"></i>
+													</span>
+													Manhattan, New York
+												</li>
+											</ul>
+										</div>
+										<a href="#!" class="tickets-details-btn">
+											tickets & details
+										</a>
+									</div>
+									<!-- event-content - end -->
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- other-event - end -->
+
+				</div>
+				<!-- tab-content - end -->
+
+			</div>
+		</section>
+		<section id="event-gallery-section" class="event-gallery-section sec-ptb-100 clearfix">
+
+			<!-- section-title - start -->
+			<div class="section-title text-center mb-50">
+				<small class="sub-title">Gowjee gallery</small>
+				<h2 class="big-title">Beautiful & <strong>Unforgettable Times</strong></h2>
+			</div>
+			<!-- section-title - end -->
+	
+					<div class="button-group filters-button-group mb-30">
+						<button class="button is-checked" data-filter="*">
+							<i class="fas fa-star"></i>
+							<strong>all</strong> gallery
+						</button>
+						<button class="button" data-filter=".video-gallery">
+							<i class="fas fa-play-circle"></i>
+							<strong>video</strong> gallery
+						</button>
+						<button class="button" data-filter=".photo-gallery">
+							<i class="far fa-image"></i>
+							<strong>photo</strong> gallery
+						</button>
+					</div>
+	
+					<div class="grid zoom-gallery clearfix mb-80" data-isotope="{ &quot;masonry&quot;: { &quot;columnWidth&quot;: 0 } }">
+						{% for galleryItem in galleryItems%}
+						{% if galleryItem.isVideo %}
+						<div class="grid-item grid-item--width2 video-gallery " data-category="video-gallery">
+							<a class="popup-youtube" href="{{galleryItem.videoLink}}">
+								<img src="{{galleryItem.image.url}}" alt="Image_not_found">
+							</a>
+							<div class="item-content">
+								<h3>{% if galleryItem.title %}{{galleryItem.title}}{% endif %}</h3>
+								<span>{% if galleryItem.description %}{{galleryItem.description}}{% endif %}</span>
+							</div>
+						</div>
+						{% else %}
+						<div class="grid-item grid-item--height2 photo-gallery " data-category="photo-gallery">
+							<a class="popup-link" href="{{galleryItem.image.url}}" >
+								<img src="{{galleryItem.image.url}}"alt="Image_not_found">
+							</a>
+							<div class="item-content">
+								<h3>{% if galleryItem.title %}{{galleryItem.title}}{% endif %}</h3>
+								<span>{% if galleryItem.description %}{{galleryItem.description}}{% endif %}</span>
+							</div>
+						</div>
+						{% endif %}
+						{% endfor %}
+				</div>
+
+			<div class="text-center">
+				<a href="{% url 'gallery' %}" class="custom-btn">view all gallery</a>
+			</div>
+
+
+		</section>
+		<section id="event-expertise-section" class="event-expertise-section bg-gray-light sec-ptb-100 clearfix">
+			<div class="container">
+
+				<!-- section-title - start -->
+				<div class="section-title text-center mb-50">
+					<small class="sub-title">Our</small>
+					<h2 class="big-title">Recent <strong>Works</strong></h2>
+				</div>
+				<!-- section-title - end -->
+
+				<!-- event-expertise-carousel - start -->
+				<div id="event-expertise-carousel" class="event-expertise-carousel owl-carousel owl-theme">
+
+					<!-- expertise-item - start -->
+					<div class="item">
+						<span class="expertise-title">Gowjee party events</span>
+						<div class="expertise-item">
+							<div class="image image-wrapper">
+								<img src="{% static 'assets/images/experties/img1.jpg' %}" alt="Image_not_found">
+								<a href="#!" class="plus-effect"></a>
+							</div>
+							<div class="content">
+								<h3 class="title">Wedding Party</h3>
+								<p>Start from <strong>$1.200-$2.000</strong></p>
+							</div>
+						</div>
+					</div>
+					<!-- expertise-item - end -->
+
+					<!-- expertise-item - start -->
+					<div class="item">
+						<span class="expertise-title">Gowjee party events</span>
+						<div class="expertise-item">
+							<div class="image image-wrapper">
+								<img src="{% static 'assets/images/experties/img2.jpg' %}" alt="Image_not_found">
+								<a href="#!" class="plus-effect"></a>
+							</div>
+							<div class="content">
+								<h3 class="title">birthday Party</h3>
+								<p>Start from <strong>$1.200-$2.000</strong></p>
+							</div>
+						</div>
+					</div>
+					<!-- expertise-item - end -->
+
+					<!-- expertise-item - start -->
+					<div class="item">
+						<span class="expertise-title">Gowjee party events</span>
+						<div class="expertise-item">
+							<div class="image image-wrapper">
+								<img src="{% static 'assets/images/experties/img3.jpg' %}" alt="Image_not_found">
+								<a href="#!" class="plus-effect"></a>
+							</div>
+							<div class="content">
+								<h3 class="title">business meeting</h3>
+								<p>Start from <strong>$1.200-$2.000</strong></p>
+							</div>
+						</div>
+					</div>
+					<!-- expertise-item - end -->
+
+					<!-- expertise-item - start -->
+					<div class="item">
+						<span class="expertise-title">Gowjee party events</span>
+						<div class="expertise-item">
+							<div class="image image-wrapper">
+								<img src="{% static 'assets/images/experties/img1.jpg' %}" alt="Image_not_found">
+								<a href="#!" class="plus-effect"></a>
+							</div>
+							<div class="content">
+								<h3 class="title">Wedding Party</h3>
+								<p>Start from <strong>$1.200-$2.000</strong></p>
+							</div>
+						</div>
+					</div>
+					<!-- expertise-item - end -->
+
+					<!-- expertise-item - start -->
+					<div class="item">
+						<span class="expertise-title">Gowjee party events</span>
+						<div class="expertise-item">
+							<div class="image image-wrapper">
+								<img src="{% static 'assets/images/experties/img2.jpg' %}" alt="Image_not_found">
+								<a href="#!" class="plus-effect"></a>
+							</div>
+							<div class="content">
+								<h3 class="title">birthday Party</h3>
+								<p>Start from <strong>$1.200-$2.000</strong></p>
+							</div>
+						</div>
+					</div>
+					<!-- expertise-item - end -->
+
+					<!-- expertise-item - start -->
+					<div class="item">
+						<span class="expertise-title">Gowjee party events</span>
+						<div class="expertise-item">
+							<div class="image image-wrapper">
+								<img src="{% static 'assets/images/experties/img3.jpg' %}" alt="Image_not_found">
+								<a href="#!" class="plus-effect"></a>
+							</div>
+							<div class="content">
+								<h3 class="title">business meeting</h3>
+								<p>Start from <strong>$1.200-$2.000</strong></p>
+							</div>
+						</div>
+					</div>
+					<!-- expertise-item - end -->
+
+					<!-- expertise-item - start -->
+					<div class="item">
+						<span class="expertise-title">Gowjee party events</span>
+						<div class="expertise-item">
+							<div class="image image-wrapper">
+								<img src="{% static 'assets/images/experties/img1.jpg' %}" alt="Image_not_found">
+								<a href="#!" class="plus-effect"></a>
+							</div>
+							<div class="content">
+								<h3 class="title">Wedding Party</h3>
+								<p>Start from <strong>$1.200-$2.000</strong></p>
+							</div>
+						</div>
+					</div>
+					<!-- expertise-item - end -->
+
+					<!-- expertise-item - start -->
+					<div class="item">
+						<span class="expertise-title">Gowjee party events</span>
+						<div class="expertise-item">
+							<div class="image image-wrapper">
+								<img src="{% static 'assets/images/experties/img2.jpg' %}" alt="Image_not_found">
+								<a href="#!" class="plus-effect"></a>
+							</div>
+							<div class="content">
+								<h3 class="title">birthday Party</h3>
+								<p>Start from <strong>$1.200-$2.000</strong></p>
+							</div>
+						</div>
+					</div>
+					<!-- expertise-item - end -->
+
+					<!-- expertise-item - start -->
+					<div class="item">
+						<span class="expertise-title">Gowjee party events</span>
+						<div class="expertise-item">
+							<div class="image image-wrapper">
+								<img src="{% static 'assets/images/experties/img3.jpg' %}" alt="Image_not_found">
+								<a href="#!" class="plus-effect"></a>
+							</div>
+							<div class="content">
+								<h3 class="title">business meeting</h3>
+								<p>Start from <strong>$1.200-$2.000</strong></p>
+							</div>
+						</div>
+					</div>
+					<!-- expertise-item - end -->
+
+					<!-- expertise-item - start -->
+					<div class="item">
+						<span class="expertise-title">Gowjee party events</span>
+						<div class="expertise-item">
+							<div class="image image-wrapper">
+								<img src="{% static 'assets/images/experties/img1.jpg' %}" alt="Image_not_found">
+								<a href="#!" class="plus-effect"></a>
+							</div>
+							<div class="content">
+								<h3 class="title">Wedding Party</h3>
+								<p>Start from <strong>$1.200-$2.000</strong></p>
+							</div>
+						</div>
+					</div>
+					<!-- expertise-item - end -->
+
+					<!-- expertise-item - start -->
+					<div class="item">
+						<span class="expertise-title">Gowjee party events</span>
+						<div class="expertise-item">
+							<div class="image image-wrapper">
+								<img src="{% static 'assets/images/experties/img2.jpg' %}" alt="Image_not_found">
+								<a href="#!" class="plus-effect"></a>
+							</div>
+							<div class="content">
+								<h3 class="title">birthday Party</h3>
+								<p>Start from <strong>$1.200-$2.000</strong></p>
+							</div>
+						</div>
+					</div>
+					<!-- expertise-item - end -->
+
+					<!-- expertise-item - start -->
+					<div class="item">
+						<span class="expertise-title">Gowjee party events</span>
+						<div class="expertise-item">
+							<div class="image image-wrapper">
+								<img src="{% static 'assets/images/experties/img3.jpg' %}" alt="Image_not_found">
+								<a href="#!" class="plus-effect"></a>
+							</div>
+							<div class="content">
+								<h3 class="title">business meeting</h3>
+								<p>Start from <strong>$1.200-$2.000</strong></p>
+							</div>
+						</div>
+					</div>
+					<!-- expertise-item - end -->
+
+				</div>
+				<!-- event-expertise-carousel - end -->
+
+			</div>
+		</section>
+		<section id="map-section" class="map-section clearfix">
+			<div class="address-wrapper">
+
+				<!-- address-info-topbar - start -->
+				<div class="address-info-topbar mb-30 clearfix">
+					<div class="address-info-left">
+						<h3 class="title-text">Gowjee event management</h3>
+						<p class="m-0">
+							Apple Store, 112 Prince St New York,
+							NY 10012, United States 80361,
+							United States
+						</p>
+					</div>
+				</div>
+				<!-- address-info-topbar - end -->
+
+				<!-- address-info-bottombar - start -->
+				<!-- address-info-bottombar - end -->
+					
+			</div>
+			<div id="google-map">
+				<div id="googleMaps" class="google-map-container"></div>
+			</div>
+		</section>
+		{% include 'partials/_footer.html' %}
+		{% include 'partials/_homeScripts.html' %}
+		</body>
+</html>

@@ -1,0 +1,740 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	{% include 'partials/_homeHead.html' %}
+
+	<body class="default-header-p">
+		
+		<!-- backtotop - start -->
+		<div id="thetop" class="thetop"></div>
+		<div class='backtotop'>
+			<a href="#thetop" class='scroll'>
+				<i class="fas fa-angle-double-up"></i>
+			</a>
+		</div>
+		<!-- backtotop - end -->
+
+		<!-- preloader - start -->
+		<div id="preloader"></div>
+		<!-- preloader - end -->
+
+
+
+
+		<!-- header-section - start
+		================================================== -->
+		{% include 'partials/_websiteNavbar.html' %}
+		<!-- header-section - end
+		================================================== -->
+
+
+
+
+
+		<!-- mobile-header - start
+		================================================== -->
+		<div class="header-altranative">
+			<div class="container">
+				<div class="logo-area float-left">
+					<a href="{%url 'index'%}">
+						<img src="{% static 'assets/images/1.site-logo.png' %}" alt="logo_not_found">
+					</a>
+				</div>
+
+				<button type="button" id="sidebarCollapse" class="alt-menu-btn float-right">
+					<i class="fas fa-bars"></i>
+				</button>
+			</div>
+
+			<!-- sidebar menu - start -->
+			<div class="sidebar-menu-wrapper">
+				<div id="sidebar" class="sidebar">
+					<span id="sidebar-dismiss" class="sidebar-dismiss">
+						<i class="fas fa-arrow-left"></i>
+					</span>
+
+					<div class="sidebar-header">
+						<a href="#!">
+							<img src="assets/images/2.site-logo.png" alt="logo_not_found">
+						</a>
+					</div>
+
+					<!-- main-pages-links - start -->
+					<div class="menu-link-list main-pages-links">
+						<ul>
+							<li class="active">
+								<a href="index.html">
+									<span class="icon"><i class="fas fa-home"></i></span>
+									Home</a>
+							</li>
+							<li>
+								<a href="about.html">
+									<span class="icon"><i class="fas fa-home"></i></span>
+									About Us
+								</a>
+							</li>
+							<li>
+								<a href="service.html">
+									<span class="icon"><i class="fas fa-home"></i></span>
+									Services
+								</a>
+							</li>
+							<li>
+								<a href="gallery.html">
+									<span class="icon"><i class="fas fa-home"></i></span>
+									Gallery
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="icon"><i class="fas fa-home"></i></span>
+									Clients
+								</a>
+							</li>
+							<li>
+								<a href="contact.html">
+									<span class="icon"><i class="fas fa-home"></i></span>
+									Contact Us
+								</a>
+							</li>
+						</ul>
+					</div>
+					<!-- main-pages-links - end -->
+
+					<!-- login-btn-group - start -->
+					<div class="login-btn-group">
+						<ul>
+
+							<li>
+								<a href="#alt-register-modal" class="register-modal-btn">
+									Register
+								</a>
+								<div id="alt-register-modal" class="reglog-modal-wrapper register-modal mfp-hide clearfix" style="background-image: url(assets/images/login-modal-bg.jpg);">
+									<div class="overlay-black clearfix">
+										<!-- rightside-content - start -->
+										<div class="rightside-content text-center">
+
+											<div class="mb-30">
+												<h2 class="form-title title-large white-color">Account <strong>Register</strong></h2>
+												<span class="form-subtitle white-color">Have an account? <strong>LOGIN NOW</strong></span>
+											</div>
+
+											<div class="login-form text-center mb-50">
+												<form action="#!">
+													<div class="form-item">
+														<input type="email" placeholder="User Name">
+													</div>
+													<div class="form-item">
+														<input type="password" placeholder="Password">
+													</div>
+													<div class="form-item">
+														<input type="email" placeholder="Repeat Password">
+													</div>
+													<div class="form-item">
+														<input type="password" placeholder="Email Address">
+													</div>
+													<div class="human-verification text-left">
+														<input type="checkbox" id="alt-imnotarobot">
+														<label for="alt-imnotarobot">I'm not a robot</label>
+														<span class="verification-image">
+															<img src="assets/images/iamnotrobot.png" alt="Image_not_found">
+														</span>
+													</div>
+													<button type="submit" class="login-btn">login now</button>
+												</form>
+											</div>
+
+											<div class="bottom-text white-color">
+												<p class="m-0">
+													* Denotes mandatory field.
+												</p>
+												<p class="m-0">** At least one telephone number is required.</p>
+											</div>
+
+										</div>
+										<!-- rightside-content - end -->
+
+										<a class="popup-modal-dismiss" href="#!">
+											<i class="fas fa-times"></i>
+										</a>
+
+									</div>
+								</div>
+							</li>
+							<li>
+								<a href="#alt-login-modal" class="login-modal-btn">
+									Login
+								</a>
+								<div id="alt-login-modal" class="reglog-modal-wrapper mfp-hide clearfix" style="background-image: url(assets/images/login-modal-bg.jpg);">
+									<div class="overlay-black clearfix">
+										<!-- rightside-content - start -->
+										<div class="rightside-content text-center">
+
+											<div class="mb-30">
+												<h2 class="form-title title-large white-color">Account <strong>Login</strong></h2>
+												<span class="form-subtitle white-color">Login to our website, or <strong>REGISTER</strong></span>
+											</div>
+
+											<div class="fb-login-btn mb-30">
+												<a href="#!">
+													<span class="icon">
+														<i class="fab fa-facebook-f"></i>
+													</span>
+													login with facebook
+												</a>
+											</div>
+
+											<div class="or-text mb-30">
+												<span>or sign in</span>
+											</div>
+
+											<div class="login-form text-center mb-50">
+												<form action="#!">
+													<div class="form-item">
+														<input type="email" placeholder="example@gmail.com">
+													</div>
+													<div class="form-item">
+														<input type="password" placeholder="Password">
+													</div>
+													<button type="submit" class="login-btn">login now</button>
+												</form>
+											</div>
+
+											<div class="bottom-text white-color">
+												<p class="m-0">
+													* Denotes mandatory field.
+												</p>
+												<p class="m-0">** At least one telephone number is required.</p>
+											</div>
+
+										</div>
+										<!-- rightside-content - end -->
+
+										<a class="popup-modal-dismiss" href="#!">
+											<i class="fas fa-times"></i>
+										</a>
+
+									</div>
+								</div>
+							</li>
+							
+						</ul>
+					</div>
+					<!-- login-btn-group - end -->
+
+					<div class="overlay"></div>
+				</div>
+			</div>
+			<!-- sidebar menu - end -->
+		</div>
+		<!-- mobile-header - end
+		================================================== -->
+
+
+
+
+
+		<!-- breadcrumb-section - start
+		================================================== -->
+		<section id="breadcrumb-section" class="breadcrumb-section clearfix">
+			<div class="jarallax" style="background-image: url({% static 'assets/images/breadcrumb/0.breadcrumb-bg.jpg' %});">
+				<div class="overlay-black">
+					<div class="container">
+						<div class="row justify-content-center">
+							<div class="col-lg-6 col-md-12 col-sm-12">
+
+								<!-- breadcrumb-title - start -->
+								<div class="breadcrumb-title text-center mb-50">
+									<span class="sub-title">all you need to know</span>
+									<h2 class="big-title"><strong>about</strong> <br>Event Management</h2>
+								</div>
+								<!-- breadcrumb-title - end -->
+
+								<!-- breadcrumb-list - start -->
+								<div class="breadcrumb-list">
+									<ul>
+										<li class="breadcrumb-item"><a href="index.html" class="breadcrumb-link">Home</a></li>
+										<li class="breadcrumb-item active" aria-current="page">about us</li>
+									</ul>
+								</div>
+								<!-- breadcrumb-list - end -->
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- breadcrumb-section - end
+		================================================== -->
+
+
+
+
+
+		<!-- our-management-section - start
+		================================================== -->
+		<section id="our-management-section" class="our-management-section bg-gray-light sec-ptb-100 clearfix">
+			<div class="container">
+				<div class="row">
+
+					<div class="col-lg-8 offset-md-2 col-md-12 col-sm-12">
+						<div class="row">
+
+							<!-- management-item - start -->
+							<div class="col-lg-12 col-md-12 col-sm-12">
+								<div class="management-item sr-fade2">
+									<div class="item-title">
+										<h3 class="title-text">
+											Event Management
+										</h3>
+									</div>
+									<p class="black-color mb-30">
+										Event management is the application of project management to the creation and development of small and/or large-scale personal or corporate events such as festivals, conferences, ceremonies, weddings, formal parties, concerts, or conventions. It involves studying the brand, identifying its target audience, devising the event concept, and coordinating the technical aspects before actually launching the event.
+                                        The events industry now includes events of all sizes from the Olympics down to business breakfast meetings. Many industries, celebrities, charitable organizations, and interest groups hold events in order to market their label, build business relationships, raise money, or celebrate achievement.
+									</p>
+									<p class="black-color m-0">
+											<i>
+												The process of planning and coordinating the event is usually referred to as event planning and which can include budgeting, scheduling, site selection, acquiring necessary permits, coordinating transportation and parking, arranging for speakers or entertainers, arranging decor, event security, catering, coordinating with third party vendors, and emergency plans. Each event is different in its nature so process of planning & execution of each event differs on basis of type of event.
+                                                The event manager is the person who plans and executes the event, taking responsibility for the creative, technical, and logistical elements. This includes overall event design, brand building, marketing and communication strategy, audio-visual production, script writing, logistics, budgeting, negotiation, and client service.
+											</i>	
+									</p>
+								</div>
+							</div>
+							<!-- management-item - end -->
+
+							<!-- management-item - start -->
+							<div class="col-lg-12 col-md-12 col-sm-12 mt-4">
+								<div class="management-item sr-fade3">
+									<div class="item-title">
+										<h3 class="title-text">
+											Event Planning
+										</h3>
+									</div>
+									<p class="black-color mb-30">
+										Event planning is the process of managing a project such as a meeting, convention, tradeshow,  ceremony, (link is external)team building activity, party, or convention. Event planning includes budgeting, establishing timelines, selecting and reserving the event sites, acquiring permits, planning food, coordinating transportation, developing a theme, arranging for activities, selecting speakers and keynotes, arranging for equipment and facilities, managing risk, and developing contingency plans.
+										Event Planning consists of coordinating every detail of meetings and conventions, from the speakers and meeting location to arranging for printed materials and audio-visual equipment.
+									</p>
+									<p class="black-color m-0">
+											<i>
+												Event planning begins with determining the objective that the sponsoring organization wants to achieve. Planners choose speakers, entertainment, and content, and arrange the program to present the organization's information in the most effective way. Meeting planners are responsible for selecting meeting sites, prospective attendees and how to get them to the meeting.
+												Event planning is the energizing art of choreographing people and activities in order to create a show that creates memories of a lifetime. Designing and producing an event, whether it‘s a meeting, corporate event, fund-raiser, tradeshow or any other event, is in many ways comparable to directing a live stage performance. An added bonus, for those who love to travel, it provides an amazing opportunity  to travel to luxurious hotels, interesting new places and meet speakers and attendees from around the world. All of this, while enjoying a high level of autonomy and independence!
+											</i>	
+									</p>
+								</div>
+							</div>
+							<!-- management-item - end -->
+
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</section>
+		<!-- our-management-section - end
+		================================================== -->
+
+
+
+
+
+
+		<section id="event-section" class="event-section sec-ptb-100 bg-gray-light clearfix">
+			<div class="container">
+
+				<div class="mb-50">
+					<div class="row">
+
+						<!-- section-title - start -->
+						<div class="col-lg-3 col-md-12 col-sm-12">
+							<div class="section-title text-left">
+								<span class="line-style"></span>
+								<small class="sub-title">Our</small>
+								<h2 class="big-title"><strong>Services</strong></h2>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+				<!-- tab-content - start -->
+				<div class="tab-content">
+					<div id="musical-event" class="tab-pane fade in active show">
+						<div class="row">
+							{% for service in services %}
+							<div class="col-lg-6 col-md-12 col-sm-12">
+								<div class="event-item clearfix">
+
+									<!-- event-image - start -->
+									<div class="event-image">
+										<img src="{{service.image.url}}" alt="Image_not_found">
+									</div>
+									<!-- event-image - end -->
+
+									<!-- event-content - start -->
+									<div class="event-content">
+										<div class="event-title mb-15">
+											<h3 class="title">
+												{{service.title}}
+											</h3>
+										</div>
+										<div class="event-post-meta ul-li-block mb-30">
+											<p style="color:black;height: 124px;overflow: hidden;">{{service.description}}</p>
+										</div>
+										<a href="{% url 'service' id=service.id %}" class="tickets-details-btn">
+											Read More
+										</a>
+									</div>
+									<!-- event-content - end -->
+
+								</div>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+					<!-- musical-event - end -->
+
+					<!-- other-event - start -->
+					<div id="other-event" class="tab-pane fade">
+						<div class="row">
+
+							<!-- event-item - start -->
+							<div class="col-lg-6 col-md-12 col-sm-12">
+								<div class="event-item clearfix">
+
+									<!-- event-image - start -->
+									<div class="event-image">
+										<div class="post-date">
+											<span class="date">26</span>
+											<small class="month">june</small>
+										</div>
+										<img src="{% static 'assets/images/event/event-1.jpg' %}" alt="Image_not_found">
+									</div>
+									<!-- event-image - end -->
+
+									<!-- event-content - start -->
+									<div class="event-content">
+										<div class="event-title mb-15">
+											<h3 class="title">
+												Barcelona Food truck Festival 2018
+											</h3>
+											<span class="ticket-price yellow-color">Tickets from $52</span>
+										</div>
+										<div class="event-post-meta ul-li-block mb-30">
+											<ul>
+												<li>
+													<span class="icon">
+														<i class="far fa-clock"></i>
+													</span>
+													Start 20:00pm - 22:00pm
+												</li>
+												<li>
+													<span class="icon">
+														<i class="fas fa-map-marker-alt"></i>
+													</span>
+													Manhattan, New York
+												</li>
+											</ul>
+										</div>
+										<a href="#!" class="tickets-details-btn">
+											tickets & details
+										</a>
+									</div>
+									<!-- event-content - end -->
+
+								</div>
+							</div>
+							<!-- event-item - end -->
+
+							<!-- event-item - start -->
+							<div class="col-lg-6 col-md-12 col-sm-12">
+								<div class="event-item clearfix">
+
+									<!-- event-image - start -->
+									<div class="event-image">
+										<div class="post-date">
+											<span class="date">26</span>
+											<small class="month">june</small>
+										</div>
+										<img src="{% static 'assets/images/event/event-2.jpg' %}" alt="Image_not_found">
+									</div>
+									<!-- event-image - end -->
+
+									<!-- event-content - start -->
+									<div class="event-content">
+										<div class="event-title mb-15">
+											<h3 class="title">
+												Barcelona Food truck Festival 2018
+											</h3>
+											<span class="ticket-price yellow-color">Tickets from $52</span>
+										</div>
+										<div class="event-post-meta ul-li-block mb-30">
+											<ul>
+												<li>
+													<span class="icon">
+														<i class="far fa-clock"></i>
+													</span>
+													Start 20:00pm - 22:00pm
+												</li>
+												<li>
+													<span class="icon">
+														<i class="fas fa-map-marker-alt"></i>
+													</span>
+													Manhattan, New York
+												</li>
+											</ul>
+										</div>
+										<a href="#!" class="tickets-details-btn">
+											tickets & details
+										</a>
+									</div>
+									<!-- event-content - end -->
+
+								</div>
+							</div>
+							<!-- event-item - end -->
+
+							<!-- event-item - start -->
+							<div class="col-lg-6 col-md-12 col-sm-12">
+								<div class="event-item clearfix">
+
+									<!-- event-image - start -->
+									<div class="event-image">
+										<div class="post-date">
+											<span class="date">26</span>
+											<small class="month">june</small>
+										</div>
+										<img src="{% static 'assets/images/event/event-3.jpg' %}" alt="Image_not_found">
+									</div>
+									<!-- event-image - end -->
+
+									<!-- event-content - start -->
+									<div class="event-content">
+										<div class="event-title mb-15">
+											<h3 class="title">
+												Barcelona Food truck Festival 2018
+											</h3>
+											<span class="ticket-price yellow-color">Tickets from $52</span>
+										</div>
+										<div class="event-post-meta ul-li-block mb-30">
+											<ul>
+												<li>
+													<span class="icon">
+														<i class="far fa-clock"></i>
+													</span>
+													Start 20:00pm - 22:00pm
+												</li>
+												<li>
+													<span class="icon">
+														<i class="fas fa-map-marker-alt"></i>
+													</span>
+													Manhattan, New York
+												</li>
+											</ul>
+										</div>
+										<a href="#!" class="tickets-details-btn">
+											tickets & details
+										</a>
+									</div>
+									<!-- event-content - end -->
+
+								</div>
+							</div>
+							<!-- event-item - end -->
+
+							<!-- event-item - start -->
+							<div class="col-lg-6 col-md-12 col-sm-12">
+								<div class="event-item clearfix">
+
+									<!-- event-image - start -->
+									<div class="event-image">
+										<div class="post-date">
+											<span class="date">26</span>
+											<small class="month">june</small>
+										</div>
+										<img src="{% static 'assets/images/event/event-4.jpg' %}" alt="Image_not_found">
+									</div>
+									<!-- event-image - end -->
+
+									<!-- event-content - start -->
+									<div class="event-content">
+										<div class="event-title mb-15">
+											<h3 class="title">
+												Barcelona Food truck Festival 2018
+											</h3>
+											<span class="ticket-price yellow-color">Tickets from $52</span>
+										</div>
+										<div class="event-post-meta ul-li-block mb-30">
+											<ul>
+												<li>
+													<span class="icon">
+														<i class="far fa-clock"></i>
+													</span>
+													Start 20:00pm - 22:00pm
+												</li>
+												<li>
+													<span class="icon">
+														<i class="fas fa-map-marker-alt"></i>
+													</span>
+													Manhattan, New York
+												</li>
+											</ul>
+										</div>
+										<a href="#!" class="tickets-details-btn">
+											tickets & details
+										</a>
+									</div>
+									<!-- event-content - end -->
+
+								</div>
+							</div>
+							<!-- event-item - end -->
+
+							<!-- event-item - start -->
+							<div class="col-lg-6 col-md-12 col-sm-12">
+								<div class="event-item clearfix">
+
+									<!-- event-image - start -->
+									<div class="event-image">
+										<div class="post-date">
+											<span class="date">26</span>
+											<small class="month">june</small>
+										</div>
+										<img src="{% static 'assets/images/event/event-5.jpg' %}" alt="Image_not_found">
+									</div>
+									<!-- event-image - end -->
+
+									<!-- event-content - start -->
+									<div class="event-content">
+										<div class="event-title mb-15">
+											<h3 class="title">
+												Barcelona Food truck Festival 2018
+											</h3>
+											<span class="ticket-price yellow-color">Tickets from $52</span>
+										</div>
+										<div class="event-post-meta ul-li-block mb-30">
+											<ul>
+												<li>
+													<span class="icon">
+														<i class="far fa-clock"></i>
+													</span>
+													Start 20:00pm - 22:00pm
+												</li>
+												<li>
+													<span class="icon">
+														<i class="fas fa-map-marker-alt"></i>
+													</span>
+													Manhattan, New York
+												</li>
+											</ul>
+										</div>
+										<a href="#!" class="tickets-details-btn">
+											tickets & details
+										</a>
+									</div>
+									<!-- event-content - end -->
+
+								</div>
+							</div>
+							<!-- event-item - end -->
+
+							<!-- event-item - start -->
+							<div class="col-lg-6 col-md-12 col-sm-12">
+								<div class="event-item clearfix">
+
+									<!-- event-image - start -->
+									<div class="event-image">
+										<div class="post-date">
+											<span class="date">26</span>
+											<small class="month">june</small>
+										</div>
+										<img src="{% static 'assets/images/event/event-6.jpg' %}" alt="Image_not_found">
+									</div>
+									<!-- event-image - end -->
+
+									<!-- event-content - start -->
+									<div class="event-content">
+										<div class="event-title mb-15">
+											<h3 class="title">
+												Barcelona Food truck Festival 2018
+											</h3>
+											<span class="ticket-price yellow-color">Tickets from $52</span>
+										</div>
+										<div class="event-post-meta ul-li-block mb-30">
+											<ul>
+												<li>
+													<span class="icon">
+														<i class="far fa-clock"></i>
+													</span>
+													Start 20:00pm - 22:00pm
+												</li>
+												<li>
+													<span class="icon">
+														<i class="fas fa-map-marker-alt"></i>
+													</span>
+													Manhattan, New York
+												</li>
+											</ul>
+										</div>
+										<a href="#!" class="tickets-details-btn">
+											tickets & details
+										</a>
+									</div>
+									<!-- event-content - end -->
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- other-event - end -->
+
+				</div>
+				<!-- tab-content - end -->
+
+			</div>
+		</section>
+
+
+
+
+
+
+
+
+		<!-- testimonial5-section - start
+		================================================== -->
+	
+		<!-- testimonial5-section - end
+		================================================== -->
+
+
+
+
+
+		<!-- absolute-sponsor-section - end
+		================================================== -->
+
+
+
+
+
+		<!-- speaker-section - start
+		================================================== -->
+		
+		<!-- speaker-section - end
+		================================================== -->
+
+
+
+
+
+		<!-- special-offer-section - start
+		================================================== -->
+		
+		<!-- special-offer-section - end
+		================================================== -->
+		{% include 'partials/_footer.html' %}
+		{% include 'partials/_homeScripts.html' %}
+
+	</body>
+</html>
